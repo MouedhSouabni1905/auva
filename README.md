@@ -37,14 +37,7 @@ Organize tasks, projects and goals into lists
 - A list of type project can only contain elements of types: project, task.
 - A list of type task can only contain elements of type: task.
 
-## Examples
-For multiple lists or elements at once, they should be separated by commas and no spaces, the types can be different as well but will be taken respectively and expanded or ignored accordingly (except reference ids which, which can be ommited for a precise position by leaving a ,, instead). Multiple word strings have to be enclosed between " " or ' '.
-
 **Example commands:**
 - `something nl groceries,assignments task` : creates two lists of type task
-- `something nl chores,webapp,cliapp task,project` : chores will be a list of type task and webapp and cliapp will both be of type project
-- `something nl chores,webapp task,project,goal`  : chores will be of type task, webapp will be of type project, and the type goal will be ignored
 
-- These apply similarly to adding new elements.
-- Deleting and checking elements/lists does not require a type so applying the command to multiple ones needs only the comma separation.
 - Pay attention to what you're deleting because anything that references a list is deleted with it. You can avoid adding references and rely on your strings to recognize then instead. The id option is to help recognize them in case the referencing/referenced strings are different, so you might not need it.
