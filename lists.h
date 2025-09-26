@@ -1,43 +1,27 @@
 #ifndef LISTS_H
-
 #define LISTS_H
 
-typedef struct task {
-	char * description[4048]; // or list name
-	union {
-		task_t ** elements; // ptr to list of tasks
-		int identifier; // when a task type doesn't contain elements, it is itself an element and requires an identifier
-				// lists of tasks do not require an identifier, they are identified by their name
-	};
-} task_t;
-
-typedef union taskorproj {
-	goal_t project;
-	task_t task;
+typedef struct task task_t;
+struct task {
+	char description[4048]; // or list name
+	int identifier;
+	int * elements[]; // ptr to list of tasks
 };
 
-typedef struct project {
-	char * description[4048]; // or list name
-	union {
-		taskorproj ** elements; // ptr to list of tasks
-		int identifier; // when a task type doesn't contain elements, it is itself an element and requires an identifier
-				// lists of tasks do not require an identifier, they are identified by their name
-	};
-} proj_t;
+typedef struct proj proj_t;
+struct proj {
+	char description[4048]; // or list name
+	int identifier;
+	int * elements[]; // ptr to list of tasks
+};
 
-typedef union tporgoal {
-	goal_t goal;
-	proj_t project;
-	task_t task;
-} tporgoal_t;
+typedef struct goal goal_t;
+struct goal {
+	char description[4048]; // or list name
+	int identifier;
+	int * elements[]; // ptr to list of tasks
+};
 
-typedef struct goal {
-	char * description[4048]; // or list name
-	union {
-		tporgoal_t ** elements; // ptr to list of tasks
-		int identifier; // when a task type doesn't contain elements, it is itself an element and requires an identifier
-				// lists of tasks do not require an identifier, they are identified by their name
-	};
-} goal_t;
+void testfunc(int childrennum, char * descr, int id);
 
 #endif //LISTS_H
