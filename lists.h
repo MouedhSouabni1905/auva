@@ -10,16 +10,18 @@ enum elt_type {
 typedef struct lstelt lstelt_t; // list element
 struct lstelt {
 	char description[4048]; // or list name
-	elt_type type;
+	enum elt_type type;
 	int identifier;
 	int * elements; // ptr to list of element, by id
 };
 
-task_t * newtask(char * description);
+lstelt_t * newtask(char * description);
 
-proj_t * newproj(char * description);
+lstelt_t * newproj(char * description);
 
-goal_t * newgoal(char * description);
+lstelt_t * newgoal(char * description);
+
+void printdetails(lstelt_t * elt);
 
 int gettype(lstelt_t * element);
 
