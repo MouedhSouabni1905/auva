@@ -1,27 +1,32 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-typedef struct task task_t;
-struct task {
-	char description[4048]; // or list name
-	int identifier;
-	int * elements[]; // ptr to list of tasks
+enum elt_type {
+	TASK,
+	PROJECT,
+	GOAL
 };
 
-typedef struct proj proj_t;
-struct proj {
+typedef struct lstelt lstelt_t; // list element
+struct lstelt {
 	char description[4048]; // or list name
+	elt_type type;
 	int identifier;
-	int * elements[]; // ptr to list of tasks
+	int * elements; // ptr to list of element, by id
 };
 
-typedef struct goal goal_t;
-struct goal {
-	char description[4048]; // or list name
-	int identifier;
-	int * elements[]; // ptr to list of tasks
-};
+task_t * newtask(char * description);
 
-void testfunc(int childrennum, char * descr, int id);
+proj_t * newproj(char * description);
+
+goal_t * newgoal(char * description);
+
+int gettype(lstelt_t * element);
+
+int getid(lstelt_t * element);
+
+char * getdescr(lstelt_t * element);
+
+int * getchildren(lstelt_t * element);
 
 #endif //LISTS_H
