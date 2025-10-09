@@ -4,7 +4,7 @@ Organize tasks, projects and goals into lists
 
 # Documentation
 ## Usage
-`something COMMAND [options] ARGUMENT [arguments ...]`
+`auva COMMAND [options] ARGUMENT [arguments ...]`
 
 ## Commands
 - `showlists` or `sl` : show all of your created lists
@@ -38,6 +38,6 @@ Organize tasks, projects and goals into lists
 - A list of type task can only contain elements of type: task.
 
 **Example commands:**
-- `something nl groceries,assignments task` : creates two lists of type task
+- `auva nl groceries,assignments task` : creates two lists of type task
 
 - Pay attention to what you're deleting because anything that references a list is deleted with it. You can avoid adding references and rely on your strings to recognize then instead. The id option is to help recognize them in case the referencing/referenced strings are different, so you might not need it.
