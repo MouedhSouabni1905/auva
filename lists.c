@@ -31,7 +31,7 @@ lstelt_t *newgoal(char *description) {
 
 int gettype(lstelt_t *element) { return element->type; }
 
-int getid(lstelt_t *element) { return 0; }
+int getid(lstelt_t *element) { return element->identifier; }
 
 char *getdescr(lstelt_t *element) { return element->description; }
 
