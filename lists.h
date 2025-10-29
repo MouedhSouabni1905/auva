@@ -8,7 +8,7 @@ struct lstelt {
   char description[4048]; // or list name
   enum elt_type type;
   int identifier;
-  int *elements; // ptr to list of element, by id
+  int elements[]; // array of element ids
 };
 
 lstelt_t *newtask(char *description);
@@ -22,6 +22,8 @@ int gettype(lstelt_t *element);
 int getid(lstelt_t *element);
 
 char *getdescr(lstelt_t *element);
+
+int addchildren(lstelt_t *element, int *children);
 
 int *getchildren(lstelt_t *element);
 

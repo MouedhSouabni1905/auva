@@ -35,4 +35,9 @@ int getid(lstelt_t *element) { return element->identifier; }
 
 char *getdescr(lstelt_t *element) { return element->description; }
 
-int *getchildren(lstelt_t *element) { return 0; }
+int addchildren(lstelt_t *element, int *children) { return 0; }
+
+int *getchildren(lstelt_t *element) {
+  int *i = 0;
+  return i;
+}
