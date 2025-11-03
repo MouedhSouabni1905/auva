@@ -16,6 +16,6 @@ lstelt_t newproj(char *description);
 
 lstelt_t newgoal(char *description);
 
-int *addchildren(lstelt_t element, int *firstchild, int length);
+int *addchild(lstelt_t element, int *oldList, int length);
 
 #endif // LISTS_H

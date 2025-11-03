@@ -29,17 +29,22 @@ lstelt_t newgoal(char *description) {
   return ngoal;
 }
 
-int *addchildren(lstelt_t element, int *oldList, int length) {
+int *addchild(lstelt_t element, int *oldList, int length) {
   int * newChildrenList = malloc(length * sizeof(oldList[0]) + sizeof(element.identifier));
   
+  if(length == 1) {
+    newChildrenList[0] = element.identifier;
+    return newChildrenList;
+  }
+
   int i;
   for(i = 0; i < length; i++) {
     newChildrenList[i] = oldList[i];
   }
 
-  newChildrenList[++i] = element.identifier;
+  newChildrenList[i] = element.identifier;
 
-  free(oldList);
+  //free(oldList);
 
   return newChildrenList;
 }
