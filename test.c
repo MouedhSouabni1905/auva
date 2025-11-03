@@ -20,7 +20,7 @@ int main() {
                   2); // the children of project are the result of adding
                       // the task to the former list of children of projects
   allChildren[0] = childrenoftask; // children of task are the empty array since
-                                   // it doesn't contain any children`
+                                   // it doesn't contain any children
 
   // TODO
   // Fix getters, constructors and data model to fit the modifications

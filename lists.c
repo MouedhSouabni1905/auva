@@ -29,15 +29,17 @@ lstelt_t newgoal(char *description) {
   return ngoal;
 }
 
-// Takes the pointer to the first child (ie. first element of the array)
-// the length of the array
-// and the element to be added to the array (as a child)
-int *addchildren(lstelt_t element, int *firstchild, int length) {
-  // since the local variable is added to the stack,
-  // it will be release as soon as the function ends,
-  // so the returned pointer would result in a segfault
-  // TODO
-  // Use realloc or calloc to create a new array
+int *addchildren(lstelt_t element, int *oldList, int length) {
+  int * newChildrenList = malloc(length * sizeof(oldList[0]) + sizeof(element.identifier));
+  
+  int i;
+  for(i = 0; i < length; i++) {
+    newChildrenList[i] = oldList[i];
+  }
+
+  newChildrenList[++i] = element.identifier;
+
+  free(oldList);
 
   return newChildrenList;
 }
