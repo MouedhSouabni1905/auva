@@ -1,5 +1,6 @@
-#include "lists.h"
 #include <stdio.h>
+#include "bindings.h"
+#include "lists.h"
 
 int main() {
   lstelt_t task = newtask(
